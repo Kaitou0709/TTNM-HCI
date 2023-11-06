@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "JfU3Lku77OhM+KhwHsL8lnT92hgLbfhWbkYXcgVkMmo=",
+  "Source": "WebAPIcheck",
+  "BasePath": "_content/WebAPIcheck",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

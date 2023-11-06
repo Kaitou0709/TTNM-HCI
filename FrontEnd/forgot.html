@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Khôi phục mật khẩu </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img style="border: 1px solid #ffffff; border-radius: 15px;" src="include/img/logo.png" alt="IMG">
+              </div>
+                <form class="login100-form validate1-form">
+                    <span class="login100-form-title">
+                        <b>KHÔI PHỤC MẬT KHẨU</b>
+                    </span>
+                    <form action="custommer.html">
+                        <div class="wrap-input100 validate1-input"
+                            data-validate1="Bạn cần nhập đúng thông tin như: ex@abc.xyz">
+                            <input class="input100" type="text" placeholder="Nhập email" name="emailInput"
+                                id="emailInput" value="" />
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class='bx bx-mail-send' ></i>
+                            </span>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <input type="button" onclick="return RegexEmail('emailInput')" value="Lấy mật khẩu" />
+                        </div>
+
+                        <div class="text-center p-t-12">
+                            <a class="txt2" href="index.html">
+                                Trở về đăng nhập
+                            </a>
+                        </div>
+                    </form>
+                    <div class="p-t-70 txt2">
+                        Phần mềm quản lý sinh viên TLU 
+                        <script type="text/javascript">document.write(new Date().getFullYear());</script> <a
+                            class="txt2" href="#"> Code bởi nhóm 8</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="NullModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thông báo</h5>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-2">
+                  <span class="danger-icon"><i class="fa-solid fa-circle-exclamation fa-3x"></i></span>
+                  </div>
+                  <div class="col-10 text-center">
+                        Vui lòng nhập email của bạn để khôi phục mật khẩu.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal" id="falseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thông báo</h5>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-2">
+                  <span class="danger-icon"><i class="fa-solid fa-circle-exclamation fa-3x"></i></span>
+                  </div>
+                  <div class="col-10 text-center">
+                       Email không đúng định dạng. Vui lòng kiểm tra lại email
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal" id="NullModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thông báo</h5>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-2">
+                  <span class="danger-icon"><i class="fa-solid fa-circle-exclamation fa-3x"></i></span>
+                  </div>
+                  <div class="col-10 text-center">
+                        Vui lòng nhập email của bạn để khôi phục mật khẩu
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal" id="successModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thông báo</h5>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-2">
+                  <span class="danger-icon"><i class="fa-solid fa-check fa-3x"></i></span>
+                  </div>
+                  <div class="col-10">
+                       Chúng tôi đã gửi hướng dẫn đến email của bạn. Vui lòng kiểm tra email vừa nhập.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script src="js/main.js"></script>
+   <script src="vendor/bootstrap/js/popper.js"></script>
+   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  
+   
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIcheck", "WebAPIcheck\WebAPIcheck.csproj", "{0D37E963-3C88-40FE-8C66-226372C60C69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D37E963-3C88-40FE-8C66-226372C60C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D37E963-3C88-40FE-8C66-226372C60C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D37E963-3C88-40FE-8C66-226372C60C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D37E963-3C88-40FE-8C66-226372C60C69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {963876A2-DA12-4A33-8252-923D8BEA56A8}
+	EndGlobalSection
+EndGlobal

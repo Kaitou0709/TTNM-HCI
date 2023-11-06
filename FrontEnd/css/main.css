@@ -1,0 +1,111 @@
+.nav-item .active {
+    border-radius: 6px;
+    background: linear-gradient(145deg, #291ec6, #2619d6);
+    box-shadow:  4px 4px 8px #3b60f3,
+                 -4px -4px 8px #5125f0;
+  }
+#rim
+{
+    border-left: 10px solid #0808ed;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+.table-title
+{
+    padding: 10px;
+}
+#table thead th
+{
+    background-color: #eeeeee;
+    font-size: 14px;
+}
+#table tbody
+{
+    font-size: 14px;
+}
+.row-chage
+{
+    align-items: center;
+}
+.note
+{
+    justify-content: center;
+    padding-left: 80px !important;
+    font-size: 14px;
+}
+.btn-change
+{
+    width: 120px;
+}
+.title
+{
+    height: 100%;
+}
+.hidden {
+    display: none !important;
+}
+.pointer-cursor {
+    cursor: pointer;
+}
+.selected-cell {
+    color: #FFFFFF !important;
+    background-color: #0d6efd !important;
+  }
+  .selected-cell .fa-check
+  {
+    color: #FFFFFF;
+  }
+.re
+{
+    vertical-align: middle !important;
+    width: 20px;
+    height: 20px;
+    float: right;
+    
+}
+.fa-exclamation-triangle
+{
+    color: rgb(190, 190, 23);
+}
+.fa-check
+{
+    color: green;
+}
+.fa-circle-exclamation
+{
+    color: red;
+}
+.fa-magnifying-glass
+{
+    padding-right: 10px;
+}
+.delete-x
+{
+    padding-right: 5px !important;
+}
+.fa-check
+{
+    padding-right: 5px;
+}
+.back
+{
+    padding-right: 5px;
+}
+.text-center {
+    display: flex;
+    align-items: center;
+}
+.error
+{
+    color: red;
+    margin: 2px 0px;
+}
+  .page-link:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: inherit; 
+        color: inherit; 
+        border-color: inherit; 
+  }
+  .Conflicting_background {
+    background-color: orange !important;
+  }

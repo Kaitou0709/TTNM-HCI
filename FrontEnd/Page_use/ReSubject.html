@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary p-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="../include/img/Logo-DH-Thuy-Loi.webp" height="40" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-3 active text-white" href="ReSubject.html">Đăng ký học</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" aria-expanded="false"
+                id="navbarDropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown">
+                <img src="../include/img/anonymous-avatar-icon-25.jpg " class="rounded-circle" height="40" alt=""
+                  loading="lazy" />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Thông tin người dùng</a></li>
+                <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                <li><a class="dropdown-item" href="../index.html">Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container mt-5 mb-5">
+    <div class="mb-5 title">
+      <div id="rim" class="d-flex">
+        <div class="table-title col-sm-6">
+          Đăng ký môn học
+        </div>
+        <div id="time" class="table-title col-sm-6 text-end">
+
+        </div>
+      </div>
+    </div>
+    <div class="row row-chage">
+      <label class="col-1 col-label-form" style="font-size: 14px;justify-content: center;">Học kỳ:</label>
+      <div class="col-md-3">
+        <select name="Semester" id="Semester" class="form-select" placeholder="Học kỳ">
+        </select>
+    </div>
+    <div class="col-md-2 button_1" style="display: flex;justify-content: center;align-items: center;">
+        <button class="btn btn-primary" id="search"><i class="fa-solid fa-magnifying-glass"></i>Tìm kiếm</button>
+      </div>
+    </div>
+    <div id="content" class="row container mt-5">
+      <div class="col-3">
+        <div class="card" style="height: 100%;">
+          <div class="card-body">
+            <span class="title" style="font-weight: bold;font-size: 25px;padding: 10px;">Môn học:</span>
+            <table class="table table-bordered" id="table" >
+              <thead>
+                <tr>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card">
+          <div class="card-body">
+            <span class="title" style="font-weight: bold;font-size: 25px;padding: 10px;">Lớp học phần:</span>
+            <table class="table table-bordered" id="table_class">
+              <thead>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="col-2">
+              <span class="danger-icon"><i class="fas fa-exclamation-triangle fa-3x"></i></span>
+            </div>
+            <div class="col-10 text-center" id="del_class">
+              Bạn có chắc chắn muốn hủy môn lớp ?
+            </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" id="confirmDeleteButton" class="btn btn-danger btn-change"><i class="fa-solid fa-check check-true" style="color: white;"></i>Xác nhận</button>
+            <button type="button" class="btn btn-secondary btn-change" data-bs-dismiss="modal"><i class="fa-solid fa-x delete-x"></i>Hủy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Success Modal -->
+    <div class="modal" id="deleteSuccessModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="col-2">
+              <span class="danger-icon"><i class="fas fa-check fa-3x"></i></span>
+            </div>
+            <div class="col-10 text-center" id="del_class_noti">
+              Bạn đã hủy lớp thành công
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add Success Modal -->
+    <div class="modal" id="addSuccessModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="col-2">
+              <span class="danger-icon"><i class="fas fa-check fa-3x"></i></span>
+            </div>
+            <div class="col-10 text-center" id="re_class">
+              Bạn đã đăng ký thành công lớp 
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Success Modal -->
+    <div class="modal" id="editSuccessModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+            <div class="col-2">
+              <span class="danger-icon"><i class="fas fa-check fa-3x"></i></span>
+            </div>
+            <div class="col-10 text-center" id="edit_class">
+              Bạn đã thay đổi lớp thành công
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="FalseModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Thông báo</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-2">
+                <span class="danger-icon"><i class="fa-solid fa-circle-exclamation fa-3x"></i></span>
+                </div>
+                <div class="col-10 text-center" id="false_re">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="../Page_use/js/JsReSubject.js"></script>
+  <script src="../js/JsTime.js"></script>
+  <script>
+  </script>
+</body>
